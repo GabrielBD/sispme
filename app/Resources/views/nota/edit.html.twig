@@ -1,0 +1,23 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block contenido %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Editar</h3>
+    </div>
+<div class="panel-body">
+    
+    {% form_theme edit_form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-danger" value="Editar" />
+        </div>
+        </div>        
+    {{ form_end(edit_form) }}
+
+</div>    
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block contenido %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Ver Preinscripción</h3>
+    </div>
+<div class="panel-body">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ preinscripcion.id }}</td>
+            </tr>
+            <tr>
+                <th>Fechaapertura</th>
+                <td>{% if preinscripcion.fechaApertura %}{{ preinscripcion.fechaApertura|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fechacierre</th>
+                <td>{% if preinscripcion.fechaCierre %}{{ preinscripcion.fechaCierre|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ultimonrosorteo</th>
+                <td>{{ preinscripcion.ultimoNroSorteo }}</td>
+            </tr>
+            <tr>
+                <th>Vacantes</th>
+                <td>{{ preinscripcion.vacantes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+    
+            <a href="{{ path('admin_preinscripcion_edit', { 'id': preinscripcion.id }) }}" class="btn btn-primary">Editar</a>
+    
+    </ul>
+
+</div>    
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usuarioexterno</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ usuarioExterno.id }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ usuarioExterno.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td>{{ usuarioExterno.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td>{{ usuarioExterno.domicilio }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ usuarioExterno.celular }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ usuarioExterno.email }}</td>
+            </tr>
+            <tr>
+                <th>Tutor</th>
+                <td>{% if usuarioExterno.tutor %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_usuarioexterno_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_usuarioexterno_edit', { 'id': usuarioExterno.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

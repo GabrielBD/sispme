@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usuarioexternos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Domicilio</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Tutor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuarioExterno in usuarioExternos %}
+            <tr>
+                <td><a href="{{ path('admin_usuarioexterno_show', { 'id': usuarioExterno.id }) }}">{{ usuarioExterno.id }}</a></td>
+                <td>{{ usuarioExterno.apellidos }}</td>
+                <td>{{ usuarioExterno.nombres }}</td>
+                <td>{{ usuarioExterno.domicilio }}</td>
+                <td>{{ usuarioExterno.celular }}</td>
+                <td>{{ usuarioExterno.email }}</td>
+                <td>{% if usuarioExterno.tutor %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_usuarioexterno_show', { 'id': usuarioExterno.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_usuarioexterno_edit', { 'id': usuarioExterno.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_usuarioexterno_new') }}">Create a new usuarioExterno</a>
+        </li>
+    </ul>
+{% endblock %}

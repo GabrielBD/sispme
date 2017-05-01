@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}SISPME{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" type="text/css" rel="
+        stylesheet" />
+        <link href="{{ asset('bundles/app/fonts/glyphicons-halflings-regular.eot') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/app/fonts/glyphicons-halflings-regular.svg') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/app/fonts/glyphicons-halflings-regular.woff') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/app/fonts/glyphicons-halflings-regular.woff2')}}" type="text/css" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+        {% block body %}      
+        {% endblock %}
+        </div>
+
+        {% block javascripts %}
+        <script src="{{ asset('bundles/app/js/jquery-2.2.3.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
+
+
+

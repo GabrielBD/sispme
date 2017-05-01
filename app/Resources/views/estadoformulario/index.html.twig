@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Estadoformularios list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Estado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for estadoFormulario in estadoFormularios %}
+            <tr>
+                <td><a href="{{ path('admin_estadoformulario_show', { 'id': estadoFormulario.id }) }}">{{ estadoFormulario.id }}</a></td>
+                <td>{{ estadoFormulario.estado }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_estadoformulario_show', { 'id': estadoFormulario.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_estadoformulario_edit', { 'id': estadoFormulario.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_estadoformulario_new') }}">Create a new estadoFormulario</a>
+        </li>
+    </ul>
+{% endblock %}

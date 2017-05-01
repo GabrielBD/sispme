@@ -1,0 +1,23 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block contenido %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Abir Preinscripción</h3>
+    </div>
+<div class="panel-body">
+    
+    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+    {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+        <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" class="btn btn-primary" value="Crear" />
+        </div>
+        </div>
+    {{ form_end(form) }}
+</div>
+</div>
+{% endblock %}

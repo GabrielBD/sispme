@@ -1,0 +1,46 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block contenido %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Listado completo</h3>
+    </div>
+<div class="panel-body">
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nropreinscripcion</th>
+                <th>Fechapreinscripcion</th>
+                <th>Motivo</th>
+                <th>Nrosorteo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulario in formularios %}
+            <tr>
+                <td><a href="{{ path('formulario_show', { 'id': formulario.id }) }}">{{ formulario.id }}</a></td>
+                <td>{{ formulario.nroPreinscripcion }}</td>
+                <td>{% if formulario.fechaPreinscripcion %}{{ formulario.fechaPreinscripcion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ formulario.motivo }}</td>
+                <td>{{ formulario.nroSorteo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formulario_show', { 'id': formulario.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formulario_edit', { 'id': formulario.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</div>
+{% endblock %}

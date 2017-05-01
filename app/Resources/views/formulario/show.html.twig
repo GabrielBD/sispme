@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formulario</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formulario.id }}</td>
+            </tr>
+            <tr>
+                <th>Nropreinscripcion</th>
+                <td>{{ formulario.nroPreinscripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fechapreinscripcion</th>
+                <td>{% if formulario.fechaPreinscripcion %}{{ formulario.fechaPreinscripcion|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Motivo</th>
+                <td>{{ formulario.motivo }}</td>
+            </tr>
+            <tr>
+                <th>Nrosorteo</th>
+                <td>{{ formulario.nroSorteo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formulario_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('formulario_edit', { 'id': formulario.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

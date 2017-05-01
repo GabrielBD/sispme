@@ -1,0 +1,114 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Postulante
+ *
+ * @ORM\Table(name="postulante")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PostulanteRepository")
+ */
+class Postulante
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellidos", type="string", length=255)
+     */
+    private $apellidos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombres", type="string", length=255)
+     */
+    private $nombres;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaNacimiento", type="datetime")
+     */
+    private $fechaNacimiento;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="edad", type="integer")
+     */
+    private $edad;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="edadal30dejunio", type="integer")
+     */
+    private $edadal30dejunio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nacionalidad", type="string", length=255)
+     */
+    private $nacionalidad;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="domicilio", type="string", length=255)
+     */
+    private $domicilio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefonos", type="string", length=255)
+     */
+    private $telefonos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="viveCon", type="string", length=255)
+     */
+    private $viveCon;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="hnoMismaEdad", type="boolean")
+     */
+    private $hnoMismaEdad;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    
+}
+

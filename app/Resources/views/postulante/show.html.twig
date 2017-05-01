@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Postulante</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ postulante.id }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ postulante.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td>{{ postulante.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimiento</th>
+                <td>{% if postulante.fechaNacimiento %}{{ postulante.fechaNacimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td>{{ postulante.edad }}</td>
+            </tr>
+            <tr>
+                <th>Edadal30dejunio</th>
+                <td>{{ postulante.edadal30dejunio }}</td>
+            </tr>
+            <tr>
+                <th>Nacionalidad</th>
+                <td>{{ postulante.nacionalidad }}</td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td>{{ postulante.domicilio }}</td>
+            </tr>
+            <tr>
+                <th>Telefonos</th>
+                <td>{{ postulante.telefonos }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ postulante.email }}</td>
+            </tr>
+            <tr>
+                <th>Vivecon</th>
+                <td>{{ postulante.viveCon }}</td>
+            </tr>
+            <tr>
+                <th>Hnomismaedad</th>
+                <td>{% if postulante.hnoMismaEdad %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_postulante_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_postulante_edit', { 'id': postulante.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

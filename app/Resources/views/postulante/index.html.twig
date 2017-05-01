@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Postulantes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Fechanacimiento</th>
+                <th>Edad</th>
+                <th>Edadal30dejunio</th>
+                <th>Nacionalidad</th>
+                <th>Domicilio</th>
+                <th>Telefonos</th>
+                <th>Email</th>
+                <th>Vivecon</th>
+                <th>Hnomismaedad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for postulante in postulantes %}
+            <tr>
+                <td><a href="{{ path('admin_postulante_show', { 'id': postulante.id }) }}">{{ postulante.id }}</a></td>
+                <td>{{ postulante.apellidos }}</td>
+                <td>{{ postulante.nombres }}</td>
+                <td>{% if postulante.fechaNacimiento %}{{ postulante.fechaNacimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ postulante.edad }}</td>
+                <td>{{ postulante.edadal30dejunio }}</td>
+                <td>{{ postulante.nacionalidad }}</td>
+                <td>{{ postulante.domicilio }}</td>
+                <td>{{ postulante.telefonos }}</td>
+                <td>{{ postulante.email }}</td>
+                <td>{{ postulante.viveCon }}</td>
+                <td>{% if postulante.hnoMismaEdad %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_postulante_show', { 'id': postulante.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_postulante_edit', { 'id': postulante.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_postulante_new') }}">Create a new postulante</a>
+        </li>
+    </ul>
+{% endblock %}
