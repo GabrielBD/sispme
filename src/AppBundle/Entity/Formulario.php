@@ -63,6 +63,19 @@ class Formulario
      */
     private $postulante;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="confirmado", type="boolean")
+     */
+    private $confirmado;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Preinscripcion")
+     * @ORM\JoinColumn(name="preinscripcion_id", referencedColumnName="id")
+     */
+    private $preinscripcion;
+
 
     public function __construct(){
 
@@ -72,7 +85,15 @@ class Formulario
         $this->setFechaPreinscripcion( new \DateTime );
 
         $this->setNroSorteo(0);
+        $this->setConfirmado(false);
+    }
 
+    public function confirmar(){
+        $this->setConfirmado(true);
+
+        $nroSorteo = $this->getPreinscripcion()->asignarNroSorteo();
+        $this->setNroSorteo($nroSorteo);
+        return $this;
     }
 
     /**
@@ -85,7 +106,6 @@ class Formulario
         return $this->id;
     }
 
-    
 
     /**
      * Set nroPreinscripcion
@@ -184,6 +204,30 @@ class Formulario
     }
 
     /**
+     * Set confirmado
+     *
+     * @param boolean $confirmado
+     *
+     * @return Formulario
+     */
+    public function setConfirmado($confirmado)
+    {
+        $this->confirmado = $confirmado;
+
+        return $this;
+    }
+
+    /**
+     * Get confirmado
+     *
+     * @return boolean
+     */
+    public function getConfirmado()
+    {
+        return $this->confirmado;
+    }
+
+    /**
      * Set estado
      *
      * @param \AppBundle\Entity\EstadoFormulario $estado
@@ -229,5 +273,29 @@ class Formulario
     public function getPostulante()
     {
         return $this->postulante;
+    }
+
+    /**
+     * Set preinscripcion
+     *
+     * @param \AppBundle\Entity\Preinscripcion $preinscripcion
+     *
+     * @return Formulario
+     */
+    public function setPreinscripcion(\AppBundle\Entity\Preinscripcion $preinscripcion = null)
+    {
+        $this->preinscripcion = $preinscripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get preinscripcion
+     *
+     * @return \AppBundle\Entity\Preinscripcion
+     */
+    public function getPreinscripcion()
+    {
+        return $this->preinscripcion;
     }
 }

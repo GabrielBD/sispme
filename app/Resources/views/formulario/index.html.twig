@@ -14,6 +14,7 @@
                 <th>Nropreinscripcion</th>
                 <th>Fechapreinscripcion</th>
                 <th>Motivo</th>
+                <th>Confirmado</th>
                 <th>Nrosorteo</th>
                 <th>Actions</th>
             </tr>
@@ -25,16 +26,20 @@
                 <td>{{ formulario.nroPreinscripcion }}</td>
                 <td>{% if formulario.fechaPreinscripcion %}{{ formulario.fechaPreinscripcion|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ formulario.motivo }}</td>
+                <td>{{ formulario.confirmado ? 'Si' : 'No' }}</td>
                 <td>{{ formulario.nroSorteo }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('formulario_show', { 'id': formulario.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('formulario_edit', { 'id': formulario.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                <a href="{{ path('formulario_show', { 'id': formulario.id }) }}">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                </a>
+                | 
+                <a href="{{ path('formulario_edit', { 'id': formulario.id }) }}">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </a>
+                |
+                <a href="{{ path('formulario_confirmar', { 'id': formulario.id }) }}">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </a>
                 </td>
             </tr>
         {% endfor %}

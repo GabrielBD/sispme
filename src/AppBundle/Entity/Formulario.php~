@@ -58,10 +58,23 @@ class Formulario
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Postulante", inversedBy="formularios")
+     * @ORM\ManyToOne(targetEntity="Postulante", inversedBy="formularios", cascade={"persist"})
      * @ORM\JoinColumn(name="postulante_id", referencedColumnName="id")
      */
     private $postulante;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="confirmado", type="boolean")
+     */
+    private $confirmado;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Preinscripcion")
+     * @ORM\JoinColumn(name="preinscripcion_id", referencedColumnName="id")
+     */
+    private $preinscripcion;
 
 
     public function __construct(){
@@ -72,7 +85,18 @@ class Formulario
         $this->setFechaPreinscripcion( new \DateTime );
 
         $this->setNroSorteo(0);
+        $this->setConfirmado(false);
+    }
 
+    public function confirmar(){
+        $this->setConfirmado(true);
+
+        die(var_dump($this->getPreinscripcion()));
+        $nroSorteo = $this->getPreinscripcion();
+        die(var_dump('hola'));
+        $this->setNroSorteo($nroSorteo);
+
+        return $this;
     }
 
     /**
@@ -85,6 +109,4 @@ class Formulario
         return $this->id;
     }
 
-    
 }
-

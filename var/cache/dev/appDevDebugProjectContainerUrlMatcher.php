@@ -364,6 +364,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_formulario_edit:
 
+            // formulario_confirmar
+            if (preg_match('#^/formulario/(?P<id>[^/]++)/confirmar$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formulario_confirmar')), array (  '_controller' => 'AppBundle\\Controller\\FormularioController::confirmarAction',));
+            }
+
             // formulario_delete
             if (preg_match('#^/formulario/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {

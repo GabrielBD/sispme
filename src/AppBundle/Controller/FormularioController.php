@@ -45,6 +45,13 @@ class FormularioController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            //ver como hacer para saber a que preinscripcion pertenece
+            $em = $this->getDoctrine()->getManager();
+
+            $preinscripcion = $em->getRepository('AppBundle:Preinscripcion')->find(1);
+            $formulario->setPreinscripcion($preinscripcion);
+
             $em->persist($formulario);
             $em->flush();
 
@@ -96,6 +103,25 @@ class FormularioController extends Controller
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+    }
+
+    /**
+     * Confirm a formulario entity.
+     *
+     * @Route("/{id}/confirmar", name="formulario_confirmar")
+     */
+    public function confirmarAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $formulario = $em->getRepository('AppBundle:Formulario')->find($id);
+        $formulario->confirmar();
+
+        $em->persist($formulario);
+        $em->persist($formulario->getPreinscripcion());
+        $em->flush();
+        return $this->showAction($formulario);
+        
     }
 
     /**

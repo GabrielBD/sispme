@@ -50,8 +50,17 @@ class Preinscripcion
     private $vacantes;
 
 
+    //private $formularios;
+
+
     public function __construct(){
         $this->setUltimoNroSorteo(0);
+    }
+
+    public function asignarNroSorteo(){
+        $nro =  $this->getUltimoNroSorteo() + 1;
+        $this->setUltimoNroSorteo($nro);
+        return $this->getUltimoNroSorteo();
     }
 
     /**

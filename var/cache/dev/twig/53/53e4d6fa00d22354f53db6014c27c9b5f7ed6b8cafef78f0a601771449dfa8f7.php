@@ -8,66 +8,70 @@ class __TwigTemplate_a56f9560769871e761403b12adf853723766b031259c2a276cf60f45096
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "formulario/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/index.html.twig", "formulario/show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'contenido' => array($this, 'block_contenido'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7884715727ca88581d170d3327806058ab2516e24d3deb0facb78536c00afafa = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7884715727ca88581d170d3327806058ab2516e24d3deb0facb78536c00afafa->enter($__internal_7884715727ca88581d170d3327806058ab2516e24d3deb0facb78536c00afafa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "formulario/show.html.twig"));
+        $__internal_86109603f0ac12c2fe85dcca3fabfe6198787dfd7fb6295fe6856d28c043e152 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_86109603f0ac12c2fe85dcca3fabfe6198787dfd7fb6295fe6856d28c043e152->enter($__internal_86109603f0ac12c2fe85dcca3fabfe6198787dfd7fb6295fe6856d28c043e152_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "formulario/show.html.twig"));
 
-        $__internal_3cbafa521d32fb5d86ab3b25fe626ad4f057317cb709f6feea280daeb809ee10 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3cbafa521d32fb5d86ab3b25fe626ad4f057317cb709f6feea280daeb809ee10->enter($__internal_3cbafa521d32fb5d86ab3b25fe626ad4f057317cb709f6feea280daeb809ee10_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "formulario/show.html.twig"));
+        $__internal_48f27ad44def60ccefe1492a1227182c72bcfae67d9da6b16c1e082b3037b068 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_48f27ad44def60ccefe1492a1227182c72bcfae67d9da6b16c1e082b3037b068->enter($__internal_48f27ad44def60ccefe1492a1227182c72bcfae67d9da6b16c1e082b3037b068_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "formulario/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7884715727ca88581d170d3327806058ab2516e24d3deb0facb78536c00afafa->leave($__internal_7884715727ca88581d170d3327806058ab2516e24d3deb0facb78536c00afafa_prof);
+        $__internal_86109603f0ac12c2fe85dcca3fabfe6198787dfd7fb6295fe6856d28c043e152->leave($__internal_86109603f0ac12c2fe85dcca3fabfe6198787dfd7fb6295fe6856d28c043e152_prof);
 
         
-        $__internal_3cbafa521d32fb5d86ab3b25fe626ad4f057317cb709f6feea280daeb809ee10->leave($__internal_3cbafa521d32fb5d86ab3b25fe626ad4f057317cb709f6feea280daeb809ee10_prof);
+        $__internal_48f27ad44def60ccefe1492a1227182c72bcfae67d9da6b16c1e082b3037b068->leave($__internal_48f27ad44def60ccefe1492a1227182c72bcfae67d9da6b16c1e082b3037b068_prof);
 
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_contenido($context, array $blocks = array())
     {
-        $__internal_02d08fb8e5a40473727ef22f6f797ba118375aa960f0d6fd3081cb9fe2f1503b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_02d08fb8e5a40473727ef22f6f797ba118375aa960f0d6fd3081cb9fe2f1503b->enter($__internal_02d08fb8e5a40473727ef22f6f797ba118375aa960f0d6fd3081cb9fe2f1503b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d1e471f0b34c95888e60549fbfedf26f05b580754e217e59a89b305d86297dac = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d1e471f0b34c95888e60549fbfedf26f05b580754e217e59a89b305d86297dac->enter($__internal_d1e471f0b34c95888e60549fbfedf26f05b580754e217e59a89b305d86297dac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
-        $__internal_6d6561560f3d12800ea27666d30d5a8d5bdceb58bd4aed9cfba3de1774433734 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6d6561560f3d12800ea27666d30d5a8d5bdceb58bd4aed9cfba3de1774433734->enter($__internal_6d6561560f3d12800ea27666d30d5a8d5bdceb58bd4aed9cfba3de1774433734_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_bcdf3cfb771c48da3f71dd9970ac769246e72c02e137950cf0254154eaee1f8b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bcdf3cfb771c48da3f71dd9970ac769246e72c02e137950cf0254154eaee1f8b->enter($__internal_bcdf3cfb771c48da3f71dd9970ac769246e72c02e137950cf0254154eaee1f8b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "contenido"));
 
         // line 4
-        echo "    <h1>Formulario</h1>
+        echo "<div class=\"panel panel-info\">
+    <div class=\"panel-heading\">
+        <h3 class=\"panel-title\">Formulario</h3>
+    </div>
+<div class=\"panel-body\">
 
-    <table>
+    <table class=\"table table-striped table-bordered\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 10
+        // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "id", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Nropreinscripcion</th>
                 <td>";
-        // line 14
+        // line 18
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "nroPreinscripcion", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Fechapreinscripcion</th>
                 <td>";
-        // line 18
+        // line 22
         if ($this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "fechaPreinscripcion", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "fechaPreinscripcion", array()), "Y-m-d H:i:s"), "html", null, true);
         }
@@ -76,51 +80,35 @@ class __TwigTemplate_a56f9560769871e761403b12adf853723766b031259c2a276cf60f45096
             <tr>
                 <th>Motivo</th>
                 <td>";
-        // line 22
+        // line 26
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "motivo", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Nrosorteo</th>
                 <td>";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "nroSorteo", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Confirmado</th>
+                <td>";
+        // line 34
+        echo (($this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "confirmado", array())) ? ("Si") : ("No"));
         echo "</td>
             </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"";
-        // line 33
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("formulario_index");
-        echo "\">Back to the list</a>
-        </li>
-        <li>
-            <a href=\"";
-        // line 36
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("formulario_edit", array("id" => $this->getAttribute((isset($context["formulario"]) ? $context["formulario"] : $this->getContext($context, "formulario")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
-        </li>
-        <li>
-            ";
-        // line 39
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
-    </ul>
+</div>
+</div>
 ";
         
-        $__internal_6d6561560f3d12800ea27666d30d5a8d5bdceb58bd4aed9cfba3de1774433734->leave($__internal_6d6561560f3d12800ea27666d30d5a8d5bdceb58bd4aed9cfba3de1774433734_prof);
+        $__internal_bcdf3cfb771c48da3f71dd9970ac769246e72c02e137950cf0254154eaee1f8b->leave($__internal_bcdf3cfb771c48da3f71dd9970ac769246e72c02e137950cf0254154eaee1f8b_prof);
 
         
-        $__internal_02d08fb8e5a40473727ef22f6f797ba118375aa960f0d6fd3081cb9fe2f1503b->leave($__internal_02d08fb8e5a40473727ef22f6f797ba118375aa960f0d6fd3081cb9fe2f1503b_prof);
+        $__internal_d1e471f0b34c95888e60549fbfedf26f05b580754e217e59a89b305d86297dac->leave($__internal_d1e471f0b34c95888e60549fbfedf26f05b580754e217e59a89b305d86297dac_prof);
 
     }
 
@@ -136,7 +124,7 @@ class __TwigTemplate_a56f9560769871e761403b12adf853723766b031259c2a276cf60f45096
 
     public function getDebugInfo()
     {
-        return array (  114 => 41,  109 => 39,  103 => 36,  97 => 33,  87 => 26,  80 => 22,  71 => 18,  64 => 14,  57 => 10,  49 => 4,  40 => 3,  11 => 1,);
+        return array (  98 => 34,  91 => 30,  84 => 26,  75 => 22,  68 => 18,  61 => 14,  49 => 4,  40 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -149,12 +137,16 @@ class __TwigTemplate_a56f9560769871e761403b12adf853723766b031259c2a276cf60f45096
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'admin/index.html.twig' %}
 
-{% block body %}
-    <h1>Formulario</h1>
+{% block contenido %}
+<div class=\"panel panel-info\">
+    <div class=\"panel-heading\">
+        <h3 class=\"panel-title\">Formulario</h3>
+    </div>
+<div class=\"panel-body\">
 
-    <table>
+    <table class=\"table table-striped table-bordered\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -176,22 +168,15 @@ class __TwigTemplate_a56f9560769871e761403b12adf853723766b031259c2a276cf60f45096
                 <th>Nrosorteo</th>
                 <td>{{ formulario.nroSorteo }}</td>
             </tr>
+            <tr>
+                <th>Confirmado</th>
+                <td>{{ formulario.confirmado ? 'Si' : 'No' }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href=\"{{ path('formulario_index') }}\">Back to the list</a>
-        </li>
-        <li>
-            <a href=\"{{ path('formulario_edit', { 'id': formulario.id }) }}\">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type=\"submit\" value=\"Delete\">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+</div>
+</div>
 {% endblock %}
 ", "formulario/show.html.twig", "/var/www/html/sispme/app/Resources/views/formulario/show.html.twig");
     }
