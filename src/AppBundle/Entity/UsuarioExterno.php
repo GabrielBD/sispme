@@ -63,6 +63,15 @@ class UsuarioExterno
      */
     private $tutor;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Postulante")
+     */
+    private $hijo;
+
+
+    public function __construct() {
+       // $this->hijos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -211,11 +220,34 @@ class UsuarioExterno
     /**
      * Get tutor
      *
-     * @return bool
+     * @return boolean
      */
     public function getTutor()
     {
         return $this->tutor;
     }
-}
 
+    /**
+     * Set hijo
+     *
+     * @param \AppBundle\Entity\Postulante $hijo
+     *
+     * @return UsuarioExterno
+     */
+    public function setHijo(\AppBundle\Entity\Postulante $hijo = null)
+    {
+        $this->hijo = $hijo;
+
+        return $this;
+    }
+
+    /**
+     * Get hijo
+     *
+     * @return \AppBundle\Entity\Postulante
+     */
+    public function getHijo()
+    {
+        return $this->hijo;
+    }
+}

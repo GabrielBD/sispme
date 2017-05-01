@@ -13,7 +13,7 @@ class PostulanteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('apellidos')->add('nombres')->add('fechaNacimiento')->add('edad')->add('edadal30dejunio')->add('nacionalidad')->add('domicilio')->add('telefonos')->add('email')->add('viveCon')->add('hnoMismaEdad');
+        $builder->add('apellidos')->add('nombres')->add('fechaNacimiento')->add('edad')->add('edadal30dejunio')->add('nacionalidad')->add('domicilio')->add('telefonos')->add('email')->add('viveCon')->add('hnoMismaEdad')->add('padre', UsuarioExternoType::class)->add('madre', UsuarioExternoType::class);
     }
     
     /**

@@ -4,6 +4,9 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
+
 /**
  * Postulante
  *
@@ -100,6 +103,27 @@ class Postulante
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Formulario", mappedBy="postulante")
+     */
+    private $formularios;
+
+    /**
+     * @ORM\OneToOne(targetEntity="UsuarioExterno", cascade={"persist"})
+     */
+    private $padre;
+
+    /**
+     * @ORM\OneToOne(targetEntity="UsuarioExterno", cascade={"persist"})
+     */
+    private $madre;
+
+    public function __construct()
+    {
+        $this->formularios = new ArrayCollection();
+        //$this->padres = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -108,7 +132,4 @@ class Postulante
     {
         return $this->id;
     }
-
-    
 }
-

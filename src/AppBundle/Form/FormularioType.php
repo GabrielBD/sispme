@@ -14,7 +14,8 @@ class FormularioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('motivo');
+        ->add('motivo')
+        ->add('postulante', PostulanteType::class);
     }
     
     /**

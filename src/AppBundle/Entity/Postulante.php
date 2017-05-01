@@ -4,6 +4,9 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
+
 /**
  * Postulante
  *
@@ -100,6 +103,27 @@ class Postulante
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Formulario", mappedBy="postulante")
+     */
+    private $formularios;
+
+    /**
+     * @ORM\OneToOne(targetEntity="UsuarioExterno", cascade={"persist"})
+     */
+    private $padre;
+
+    /**
+     * @ORM\OneToOne(targetEntity="UsuarioExterno", cascade={"persist"})
+     */
+    private $madre;
+
+    public function __construct()
+    {
+        $this->formularios = new ArrayCollection();
+        //$this->padres = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -108,8 +132,6 @@ class Postulante
     {
         return $this->id;
     }
-
-    
 
     /**
      * Set apellidos
@@ -373,5 +395,87 @@ class Postulante
     public function getHnoMismaEdad()
     {
         return $this->hnoMismaEdad;
+    }
+
+    /**
+     * Add formulario
+     *
+     * @param \AppBundle\Entity\Formulario $formulario
+     *
+     * @return Postulante
+     */
+    public function addFormulario(\AppBundle\Entity\Formulario $formulario)
+    {
+        $this->formularios[] = $formulario;
+
+        return $this;
+    }
+
+    /**
+     * Remove formulario
+     *
+     * @param \AppBundle\Entity\Formulario $formulario
+     */
+    public function removeFormulario(\AppBundle\Entity\Formulario $formulario)
+    {
+        $this->formularios->removeElement($formulario);
+    }
+
+    /**
+     * Get formularios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormularios()
+    {
+        return $this->formularios;
+    }
+
+    /**
+     * Set padre
+     *
+     * @param \AppBundle\Entity\UsuarioExterno $padre
+     *
+     * @return Postulante
+     */
+    public function setPadre(\AppBundle\Entity\UsuarioExterno $padre = null)
+    {
+        $this->padre = $padre;
+
+        return $this;
+    }
+
+    /**
+     * Get padre
+     *
+     * @return \AppBundle\Entity\UsuarioExterno
+     */
+    public function getPadre()
+    {
+        return $this->padre;
+    }
+
+    /**
+     * Set madre
+     *
+     * @param \AppBundle\Entity\UsuarioExterno $madre
+     *
+     * @return Postulante
+     */
+    public function setMadre(\AppBundle\Entity\UsuarioExterno $madre = null)
+    {
+        $this->madre = $madre;
+
+        return $this;
+    }
+
+    /**
+     * Get madre
+     *
+     * @return \AppBundle\Entity\UsuarioExterno
+     */
+    public function getMadre()
+    {
+        return $this->madre;
     }
 }

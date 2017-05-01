@@ -57,6 +57,13 @@ class Formulario
     private $estado;
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Postulante", inversedBy="formularios", cascade={"persist"})
+     * @ORM\JoinColumn(name="postulante_id", referencedColumnName="id")
+     */
+    private $postulante;
+
+
     public function __construct(){
 
         $rand =substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
@@ -77,6 +84,8 @@ class Formulario
     {
         return $this->id;
     }
+
+    
 
     /**
      * Set nroPreinscripcion
@@ -173,5 +182,52 @@ class Formulario
     {
         return $this->nroSorteo;
     }
-}
 
+    /**
+     * Set estado
+     *
+     * @param \AppBundle\Entity\EstadoFormulario $estado
+     *
+     * @return Formulario
+     */
+    public function setEstado(\AppBundle\Entity\EstadoFormulario $estado = null)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return \AppBundle\Entity\EstadoFormulario
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set postulante
+     *
+     * @param \AppBundle\Entity\Postulante $postulante
+     *
+     * @return Formulario
+     */
+    public function setPostulante(\AppBundle\Entity\Postulante $postulante = null)
+    {
+        $this->postulante = $postulante;
+
+        return $this;
+    }
+
+    /**
+     * Get postulante
+     *
+     * @return \AppBundle\Entity\Postulante
+     */
+    public function getPostulante()
+    {
+        return $this->postulante;
+    }
+}

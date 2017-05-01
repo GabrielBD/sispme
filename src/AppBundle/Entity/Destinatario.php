@@ -38,7 +38,7 @@ class Destinatario
     private $nombres;
 
     /**
-     * @ORM\OneToMany(targetEntity="Nota", mappedBy="estado")
+     * @ORM\OneToMany(targetEntity="Nota", mappedBy="destinatario")
      */
     private $notas;
 

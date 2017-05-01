@@ -1,0 +1,90 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Formulario
+ *
+ * @ORM\Table(name="formulario")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\FormularioRepository")
+ */
+class Formulario
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nroPreinscripcion", type="string", length=255)
+     */
+    private $nroPreinscripcion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaPreinscripcion", type="datetime")
+     */
+    private $fechaPreinscripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="motivo", type="string", length=255)
+     */
+    private $motivo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nroSorteo", type="string", length=255)
+     */
+    private $nroSorteo;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EstadoFormulario", inversedBy="formularios")
+     * @ORM\JoinColumn(name="estadoformulario_id", referencedColumnName="id")
+     */
+    private $estado;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Postulante", inversedBy="formularios")
+     * @ORM\JoinColumn(name="postulante_id", referencedColumnName="id")
+     */
+    private $postulante;
+
+
+    public function __construct(){
+
+        $rand =substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
+        $this->setNroPreinscripcion($rand);
+
+        $this->setFechaPreinscripcion( new \DateTime );
+
+        $this->setNroSorteo(0);
+
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    
+}
+
